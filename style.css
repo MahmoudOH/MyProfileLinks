@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --card-color: #18181b;
+  --foreground-color: #fafafa;
+  --primary-color:#84cc16;
+  --links-color: #27272a;
+  --paragraph-color: #71717a;
+}
+
+body{
+  font-family: sans-serif;
+  background-image: url("Assets/background.jpg");
+  color: var(--foreground-color);
+}
+
+main{
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--card-color);
+  position: absolute;
+  padding: 40px;
+  border-radius: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+.profile-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 25px;
+}
+
+.profile-info h1{
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 12px;
+
+}
+
+.profile-info h2{
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 35px;
+}
+
+.profile-info p{
+  font-size: 14px;
+  text-align: center;
+  color:var(--foreground-color);
+  margin-bottom: 24px;
+}
+
+.my-links{
+  list-style: none;
+}
+
+.my-links li:not(:last-child) a{
+  margin-bottom: 16px;
+}
+
+.my-links li a{
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--foreground-color);
+  background-color: var(--links-color);
+  transition: 100ms all;
+}
+
+.my-links li a:hover{
+  color: var(--links-color);
+  background-color: var(--foreground-color);
+}
