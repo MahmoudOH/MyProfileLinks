@@ -3,24 +3,85 @@
   <head>
     <title>My Profile</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="Assets/wep-icone.png" type="image/x-icon">
   </head>
   <body>
     <main>
       <div class="profile-info">
-        <img src="Assets/image.png" alt="profile-image" class="profile-image"/>
+        <img
+          src="Assets/image.png"
+          alt="profile-image"
+          class="profile-image"
+          onclick="openModal(this)"
+        />
         <h1>Mahmoud AlHabbash</h1>
         <h2>Palestine - Gaza</h2>
         <p>Front-End Developer</p>
       </div>
       <div class="links">
         <ul class="my-links">
-          <li><a href="https://github.com/MahmoudOH" target="_blank">GitHub</a></li>
-          <li><a href="https://x.com/Ma7moud_Habbash" target="_blank">Twitter</a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=100008196096393" target="_blank">Facebook</a></li>
-          <li><a href="https://wa.me/qr/C4C7CONMO3XBC1" target="_blank">Whatsapp</a></li>
-          <li><a href="https://www.instagram.com/mahmoud_alhabbash4" target="_blank">Instagram</a></li>
+          <li>
+            <a href="https://github.com/MahmoudOH" target="_blank">GitHub</a>
+          </li>
+          <li>
+            <a href="https://x.com/Ma7moud_Habbash" target="_blank">X</a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/profile.php?id=100008196096393"
+              target="_blank"
+              >Facebook</a
+            >
+          </li>
+          <li>
+            <a href="https://wa.me/qr/C4C7CONMO3XBC1" target="_blank"
+              >Whatsapp</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/mahmoud_alhabbash4"
+              target="_blank"
+              >Instagram</a
+            >
+          </li>
         </ul>
       </div>
     </main>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage" />
+    </div>
+
+    <script>
+      // Open the Modal when the profile image is clicked
+      function openModal(image) {
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+
+        modal.style.display = "block";
+        modalImage.src = image.src;
+
+        // Add keydown event listener when the modal opens
+        document.addEventListener("keydown", handleEscKey);
+      }
+
+      // Close the Modal
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+
+        // Remove the keydown event listener when the modal closes
+        document.removeEventListener("keydown", handleEscKey);
+      }
+
+      // Handle the Escape key press
+      function handleEscKey(event) {
+        if (event.key === "Escape") {
+          closeModal();
+        }
+      }
+    </script>
   </body>
 </html>
